@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- p5 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+    <!-- ml5 js -->
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <title>ML5JS tutorial</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- image-box -->
+        <div class="image-box">
+          <img src="img/dog.jpg" class="image">
+
+          
+
+        </div>
+
+        <div class="result">
+          <!-- label-text -->
+          <p class="label-text">Unidentified</p>
+          <!-- accuracy-text -->
+          <p class="accuracy-text">Accuracy: 0%</p>
+
+          <!-- label-text -->
+          <p class="label-text1">Unidentified</p>
+          <!-- accuracy-text -->
+          <p class="accuracy-text1">Accuracy: 0%</p>
+
+          <!-- label-text -->
+          <p class="label-text2">Unidentified</p>
+          <!-- accuracy-text -->
+          <p class="accuracy-text2">Accuracy: 0%</p>
+        </div>
+
+
+    
+        <!-- upload-btn will go here -->
+        <input type="file" class="upload-btn" />
+    
+        <!-- predict-btn (disabled) -->
+        <button class="predict-btn" disabled>PREDICT</button>
+    
+      </div>
+
+
+<script src="js/sketch.js"></script>   
+<!-- <script src="js/sketch_p5.js"></script>  -->
+</body>
+</html>
