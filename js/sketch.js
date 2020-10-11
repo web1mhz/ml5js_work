@@ -6,7 +6,6 @@ const image = document.querySelector('.image');
 
 // .label-text
 const labelText = document.querySelector('.label-text');
-
 // .accuracy-text
 const accuracyText = document.querySelector('.accuracy-text');
 
@@ -25,7 +24,12 @@ function modelLoaded() {
  // first just console.log() 'Model Loaded'
  console.log('Model Loaded!');
  // then enable the .predict-btn
+ 
+
+ 
  predictBtn.disabled = false;
+ 
+
 
  /* then attach an 'click' eventListener to .predict-btn */
  predictBtn.addEventListener('click', predict);
@@ -52,13 +56,11 @@ function gotResults(err, results){
       /* Careful Here: Use back-ticks ``, Not single quote '' or double quote "" */
       accuracyText.innerText = `Accuracy: ${accuracy}%`;
 
+
+      results.forEach((result) => {
+        console.log(result.label, ":",  result.confidence);
+      })   
       
-      
-      
-
-
-
-
     }   
    
 }
@@ -74,6 +76,7 @@ uploadBtn.addEventListener('change', function (event) {
       image.src = objectURL;
       labelText.innerText = '';
       accuracyText.innerText ='';
+      
     }
   });
     
