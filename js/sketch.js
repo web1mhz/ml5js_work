@@ -9,6 +9,10 @@ const labelText = document.querySelector('.label-text');
 // .accuracy-text
 const accuracyText = document.querySelector('.accuracy-text');
 
+// .result-table
+const resultTable = document.querySelector(".result-table")
+
+
 // .predict-btn
 const predictBtn = document.querySelector('.predict-btn');
 
@@ -25,11 +29,7 @@ function modelLoaded() {
  console.log('Model Loaded!');
  // then enable the .predict-btn
  
-
- 
  predictBtn.disabled = false;
- 
-
 
  /* then attach an 'click' eventListener to .predict-btn */
  predictBtn.addEventListener('click', predict);
@@ -38,7 +38,7 @@ function modelLoaded() {
 
 function predict(){
     // Make a prediction with a selected image
-    model.classify(image, 10, gotResults);
+    model.classify(image, 5, gotResults);
     
 }
 
@@ -52,13 +52,18 @@ function gotResults(err, results){
       const accuracy = (results[0].confidence * 100).toFixed(2);
 
       /* update .label-text and .accuracy-text */
-      labelText.innerText = label;
+    //   labelText.innerText = label;
       /* Careful Here: Use back-ticks ``, Not single quote '' or double quote "" */
-      accuracyText.innerText = `Accuracy: ${accuracy}%`;
+    //   accuracyText.innerText = `Accuracy: ${accuracy}%`;
 
 
       results.forEach((result) => {
         console.log(result.label, ":",  result.confidence);
+        resultTable.innerHTML += `
+        <ul> 
+            <li>${result.label} : ${(result.confidence * 100).toFixed(2)}%</li>
+        </ul>
+        `;
       })   
       
     }   
@@ -74,8 +79,10 @@ uploadBtn.addEventListener('change', function (event) {
   
       /* then replace previous .image on DOM with the new file the user had uploaded */
       image.src = objectURL;
-      labelText.innerText = '';
-      accuracyText.innerText ='';
+    //   labelText.innerText = '';
+    //   accuracyText.innerText ='';
+
+    resultTable.innerHTML="";
       
     }
   });
