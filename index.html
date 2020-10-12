@@ -4,42 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     
     <!-- p5 js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>    
+    
     <!-- ml5 js -->
     <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
     <title>ML5JS tutorial</title>
 </head>
 <body>
-
-    <div class="container">
-
-        <!-- image-box -->
-        <div class="image-box">
-          <img src="" class="image"> 
-        </div>        
-        
-        
-        <!-- upload-btn will go here -->
-        <input type="file" class="upload-btn" />    
-        <!-- predict-btn (disabled) -->
-        <button class="predict-btn" disabled>PREDICT</button>
-
-        <div class="result">
-            <!-- label-text -->
-            <!-- <p class="label-text">Unidentified</p> -->
-            <!-- accuracy-text -->
-            <!-- <p class="accuracy-text">Accuracy: 0%</p>  -->
-        </div> 
-
-        <div class="result-table">
-        </div>
     
+
+    <div class="top-bar">
+        <header class= "con flex height-100p flex-jc-sb flex-ai-c">
+            <div class="logo height-100p">
+                <a href="#" class="flex height-100p flex-ai-c">로고이미지</a>
+            </div>
+            <nav class="menu-box-1 height-100p">
+                <ul class="flex height-100p">
+                    <li><a href="#" class="flex height-100p flex-ai-c">메뉴1</a></li>
+                    <li><a href="#" class="flex height-100p flex-ai-c">메뉴2</a></li>
+                    <li><a href="#" class="flex height-100p flex-ai-c">메뉴3</a></li>
+                    <li><a href="#" class="flex height-100p flex-ai-c">메뉴4</a></li>
+                </ul>
+            </nav> 
+            
+            <a href="#">
+                <li class="fas fa-search"></li>
+            </a>
+        </header>
+    </div>
+    
+    <div class="main-section">
+
+        <div class="main con">
+
+            <h3> 딥러닝을 이용한 이미지 분류 </h3>
+            <!-- image-box -->
+            <div class="image-box">                
+                <img src="" class="image"> 
+            </div>   
+            
+            
+            <!-- upload-btn will go here -->
+            <input type="file" class="upload-btn" disabled/>    
+            <!-- predict-btn (disabled) -->
+            <button class="predict-btn" disabled>PREDICT</button>
+    
+            <!-- <div class="result"> -->
+                <!-- label-text -->
+                <!-- <p class="label-text">Unidentified</p> -->
+                <!-- accuracy-text -->
+                <!-- <p class="accuracy-text">Accuracy: 0%</p>  -->
+            <!-- </div>  -->
+    
+            <div class="result-table">
+            </div> 
+        </div>
+          
     </div>
 
 
 <script src="js/sketch.js"></script>   
 <!-- <script src="js/sketch_p5.js"></script>  -->
+<!-- <script src="js/sketch_p5_transfer.js"></script>  -->
 </body>
 </html>

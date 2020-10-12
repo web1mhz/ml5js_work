@@ -3,15 +3,12 @@
 // grab reference for needed elements
 // .image
 const image = document.querySelector('.image');
-
 // .label-text
 const labelText = document.querySelector('.label-text');
 // .accuracy-text
 const accuracyText = document.querySelector('.accuracy-text');
-
 // .result-table
-const resultTable = document.querySelector(".result-table")
-
+const resultTable = document.querySelector(".result-table");
 
 // .predict-btn
 const predictBtn = document.querySelector('.predict-btn');
@@ -28,17 +25,20 @@ function modelLoaded() {
  // first just console.log() 'Model Loaded'
  console.log('Model Loaded!');
  // then enable the .predict-btn
+
+
+ uploadBtn.disabled = false;
  
- predictBtn.disabled = false;
 
  /* then attach an 'click' eventListener to .predict-btn */
- predictBtn.addEventListener('click', predict);
+ predictBtn.addEventListener('click', predict); 
   
 }
 
 function predict(){
     // Make a prediction with a selected image
     model.classify(image, 5, gotResults);
+    predictBtn.disabled = true;
     
 }
 
@@ -55,7 +55,6 @@ function gotResults(err, results){
     //   labelText.innerText = label;
       /* Careful Here: Use back-ticks ``, Not single quote '' or double quote "" */
     //   accuracyText.innerText = `Accuracy: ${accuracy}%`;
-
 
       results.forEach((result) => {
         console.log(result.label, ":",  result.confidence);
@@ -83,6 +82,8 @@ uploadBtn.addEventListener('change', function (event) {
     //   accuracyText.innerText ='';
 
     resultTable.innerHTML="";
+
+    predictBtn.disabled = false;
       
     }
   });

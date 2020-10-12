@@ -7,19 +7,126 @@
   
   /* body */
   body {
+
+    
     width: 100vw; /* 100% viewport width */
     height: 100vh; /* 100% viewport height */
-    overflow-x: hidden;
-    display: flex;
-    justify-content: center; /* horizontally center */
-    align-items: center; /* vertically center */
-    background: linear-gradient(to right, #0657bb, #023b4b); /* background color */
+    /* overflow-x: hidden; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* horizontally center */
+    /* align-items: center; */
+    /* vertically center */
+    
     font-size: 1.2rem; /* default font-size */
     font-family: sans-serif;
   }
+
+  body, ul, li, h1 {
+    margin:0;
+    padding:0;
+    list-style: none;
+  }
+
+  a {
+    color:inherit;
+    text-decoration: none;
+  }
+
+  .border-red {
+    border:2px solid red;
+  }
+
+  .border-blue {
+    border:2px solid blue;
+  }
+
+  .border-green {
+    border:2px solid green;
+  }
+ 
+
+    /* 라이브러리 */
+  .flex {
+      display: flex;
+  }
+
+  .flex-jc-sb{
+    justify-content: space-between;
+  }
+
+  .flex-ai-c{
+    align-items: center;
+  }
+
+  .height-100p{
+    height:100%;
+  }
   
+  .img-box > img{
+    display:block;
+    width:100%;
+  }
+  
+  .con {
+    width:80%;
+  }
+
+  .con {
+    margin-left:auto;
+    margin-right: auto;
+  }
+
+
+
+
+
+  .top-bar {
+    background-color: white;
+    height: 60px;   
+  }  
+  
+  
+  .top-bar > header > .menu-box-1 > ul > li > a{
+
+    font-size: 16px;
+    font-weight: 600;    
+    padding: 0 20px;
+    position: relative;
+    white-space: nowrap;
+    
+  }
+
+  .top-bar > header > .menu-box-1 > ul > li:hover > a{
+
+    text-decoration: underline;   
+  
+
+  }
+
+  .top-bar > header > .menu-box-1 > ul > li:hover > a::after{
+
+    position: absolute;
+    content: "";
+    top:calc(100% - 2px);
+    left:0;
+    width:100%;
+    border-bottom:2px solid black;      
+
+  }
+
+  
+  .main-section{
+    
+    
+    background-color: #ccc;
+ 
+   } 
+
+    
   /* .container */
-  .container {
+  .main {
+
     display: flex;
     flex-direction: column;
     justify-content: center; /* now this is for vertically center. Because of flex-direction: column; */
@@ -28,9 +135,10 @@
   
   /* .image-box */
   .image-box {
+
+    margin-top:15px;
     background-color: #fff;
-    padding: 15px; /* inner spacing */
-    margin: 30px 0px 10px 0px; /* outer spacing. Order -> top right bottom left*/
+    padding: 15px; /* inner spacing */   
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,8 +148,9 @@
   
   /* .image */
   .image {
-    width: 230px; /* the more you increase width, the more precise the prediction will be! */
-    margin-bottom: 15px;
+
+    width: 50%; /* the more you increase width, the more precise the prediction will be! */
+    display: block;    
   }
   
   /* .label-text */
@@ -79,7 +188,7 @@
 .upload-btn::before {
     content: 'Upload Image';
     display: block;
-    background-color: yellow;
+    background-color: rgb(161, 119, 41);
     font-size: 1.3rem;
     text-align: center;
     padding: 5px 8px;

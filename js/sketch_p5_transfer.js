@@ -7,22 +7,21 @@ let predict_btn;
 const resultTable = document.querySelector(".result-table");
 
 function modelReady(){
+
     console.log("모델이 준비되었다.")    
-    
-    // predict_btn.mousePressed(predict)
-   
-    var button = select(".predict-btn");
-    button.mousePressed(predict);
+    predict_btn.mousePressed(predict);    
    
 }
 
 function predict(){
+
     // alert("버튼클릭")
-    mobilenet.predict(dog, 5, gotResult);   
+    mobilenet.predict(dog, 5, gotResult);    
 
 }
 
 function gotResult(err, results){
+    
     console.log(results);
 
     results.forEach((result) => {
@@ -35,32 +34,25 @@ function gotResult(err, results){
       })
 }
 
-function imageReady(){
-
-    image(dog, 0, 0, width, height);  
+function imageReady(){    
+    image(dog, 0, 0, width, height);
     
-}
-
-function loadImg(){
-
-    dog = createImg("img/dog.jpg", imageReady);
-    dog.hide();
 }
 
 function setup() {
 
     createCanvas(400, 400);
-    background(255);
+    background(255);    
 
-    // dog_btn = createButton("개");
-    // cat_btn = createButton("고양이");
-    // predict_btn = createButton("분류"); 
+    dog = createImg("img/dog.jpg", imageReady);
+    dog.hide();
+
+    dog_btn = createButton("개");
+    cat_btn = createButton("고양이");
+    predict_btn = createButton("분류");
+
     
-    var up_btn = select(".upload-btn");
-    up_btn.mousePressed(loadImg);
 
-
-    
     mobilenet = ml5.imageClassifier("mobileNet", modelReady);
 
     
